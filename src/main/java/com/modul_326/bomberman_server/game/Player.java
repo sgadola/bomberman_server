@@ -112,6 +112,10 @@ public class Player {
         }
     }
 
+    void plantBomb() {
+        // Tick tack, boom
+    }
+
 
     public String getIpAdress() {
         return ipAdress;

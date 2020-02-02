@@ -1,6 +1,7 @@
 package com.modul_326.bomberman_server.managers;
 
 import com.modul_326.bomberman_server.Vector2D;
+import com.modul_326.bomberman_server.game.Player;
 
 public class GameManager {
 
@@ -38,7 +39,14 @@ public class GameManager {
             startGame();
     }
 
+    // Player commands
     public void movePlayer(String id, Vector2D direction) {
         // abcd
+    }
+
+    public void plantBomb(int hash){
+        Player player = PlayerManager.getPlayer(hash);
+        PlayerManager.getPlayer(hash).plantBomb();
+
     }
 }

@@ -34,11 +34,10 @@ public class BombermanController {
      * Endpoint for moving a player
      *
      * @param hash    Hash value which identifies the player (serves as kind of ID)
-     * @param request Client information to provide IP
      * @return Object containing the curent state of the game field / playground
      */
     @PostMapping("/move-player")
-    ResponseBody movePlayer(@RequestBody String hash, Vector2D direction, HttpServletRequest request) {
+    ResponseBody movePlayer(@RequestBody String hash, Vector2D direction) {
         ResponseBody response = new ResponseBody();
 
         GameManager.getGameManager().movePlayer(hash, direction);
@@ -50,12 +49,15 @@ public class BombermanController {
      * Endpoint for planting a bomb
      *
      * @param hash    Hash value which identifies the player (serves as kind of ID)
-     * @param request Client information to provide IP
      * @return Object containing the curent state of the game field / playground
      */
     @PostMapping("/plant-bomb")
-    ResponseBody plantBomb(@RequestBody String hash, HttpServletRequest request) {
+    ResponseBody plantBomb(@RequestBody String hash) {
         ResponseBody response = new ResponseBody();
+
+        GameManager.getGameManager().plantBomb(hash);
+
+        response.
 
         return response;
     }
@@ -69,7 +71,7 @@ public class BombermanController {
      * @return Object containing the curent state of the game field / playground
      */
     @GetMapping("/get-game-field")
-    ResponseBody getGameField(/*@RequestBody String username, HttpServletRequest request*/) {
+    ResponseBody getGameField() {
         ResponseBody response = new ResponseBody();
 
         return response;

@@ -24,6 +24,10 @@ public class Bomb {
         this.state = state;
     }
 
+    void dropBomb() {
+        state = "armed";
+    }
+
     void detonate() {
         for (int x = position.x; x < position.x; x++)
             for (int y = position.x; y < position.x; y++)

@@ -1,5 +1,7 @@
 package com.modul_326.bomberman_server.controller;
 
+import com.modul_326.bomberman_server.Vector2D;
+
 public class ResponsePlayer {
     String hash;
     String username;
@@ -9,12 +11,12 @@ public class ResponsePlayer {
     int y;
 
 
-    public ResponsePlayer(String hash, String username, String color, int x, int y) {
+    public ResponsePlayer(String hash, String username, String color, Vector2D position) {
         this.hash = hash;
         this.username = username;
         this.color = color;
-        this.x = x;
-        this.y = y;
+        this.x = position.x;
+        this.y = position.y;
     }
 
 
